@@ -1,0 +1,27 @@
+body {
+  margin: 0;
+}
+
+.container {
+  height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner-container {
+  display: flex;
+  width: 960px;
+  height: 120px;
+}
+
+.square {
+  border: 1px solid black;
+  height: 100%;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+}
