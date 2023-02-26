@@ -1,10 +1,10 @@
-// Generating 16 by 16 grid
+// Generating x by x grid
 function generateGrid() {
   let gridSize;
-  // do {
-  //   gridSize = Number(prompt('what grid size do you want to have?'));
-  // } while (gridSize > 100);
-  gridSize = 16; //DELETE THIS AFTERWARDS THIS IS JUST FOR CONVENIENCE TO WORK ON THE GRID ITSELF!N
+  do {
+    gridSize = Number(prompt('what grid size do you want to have?'));
+  } while (gridSize > 100);
+  // gridSize = 16; //DELETE THIS AFTERWARDS THIS IS JUST FOR CONVENIENCE TO WORK ON THE GRID ITSELF!
   const grid = document.querySelector('.container');
   for (let i = 0; i < gridSize; i++) {
     let gridRow = document.createElement('div');
@@ -27,22 +27,16 @@ function displayGrid(element, color) {
 
 // Change styling to black for grid element this is hovered over.
 function ChangeBGColorOnHover(grid, color) {
-  grid.addEventListener('mousedown', () => {
-    const gridRows = grid.children;
-    for (let row of gridRows) {
-      let gridRowElements = Array.from(row.children);
-      //adding event listener to every element
-      gridRowElements.forEach((element) => {
-        element.addEventListener('mouseover', (event) => {
-          element.style.backgroundColor = color;
-        });
+  const gridRows = grid.children;
+  for (let row of gridRows) {
+    let gridRowElements = Array.from(row.children);
+    //adding event listener to every element
+    gridRowElements.forEach((element) => {
+      element.addEventListener('mouseover', (event) => {
+        element.style.backgroundColor = color;
       });
-    }
-  });
-  grid.addEventListener('mouseup', () => {
-    let gridRowElements = Array.from(grid.children);
-    console.log(gridRowElements);
-  });
+    });
+  }
 }
 
 function clearGrid() {
@@ -62,6 +56,7 @@ function randomColor() {
   const color = `rgba(${rValue}, ${gValue}, ${bValue}, ${aValue})`;
   console.log(color); //checking the rgba values in console log.
   ChangeBGColorOnHover(grid, color);
+  alert('check the log console to see what kind of color you got');
 }
 
 // MAIN PROGRAM
