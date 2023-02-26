@@ -1,10 +1,14 @@
 // Generating 16 by 16 grid
 function generateGrid() {
+  let gridSize;
+  do {
+    gridSize = Number(prompt('what grid size do you want to have?'));
+  } while (gridSize > 100);
   const grid = document.querySelector('.container');
-  for (let i = 0; i < 16; i++) {
+  for (let i = 0; i < gridSize; i++) {
     let gridRow = document.createElement('div');
     const gridElementList = [];
-    for (let i = 0; i < 16; i++) {
+    for (let i = 0; i < gridSize; i++) {
       let gridEl = document.createElement('div');
       gridEl.classList.add('square');
       gridElementList.push(gridEl);
