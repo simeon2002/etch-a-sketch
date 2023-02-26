@@ -1,5 +1,10 @@
-body {
+body,
+h2 {
   margin: 0;
+}
+
+h1 {
+  text-align: center;
 }
 
 .container {
@@ -20,8 +25,16 @@ body {
   border: 1px solid black;
   height: 100%;
   width: 100%;
+  transition: all 0.5s ease;
 }
 
-h1 {
-  text-align: center;
+.workspace {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
 }
